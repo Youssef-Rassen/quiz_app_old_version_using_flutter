@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Result extends StatelessWidget {
   final int resultScore;
   final VoidCallback resetHandler;
-  Result(this.resultScore, this.resetHandler);
+  const Result(this.resultScore, this.resetHandler, {super.key});
   String get resultPhrase {
     String resultText;
     if (resultScore <= 8) {
@@ -25,12 +25,12 @@ class Result extends StatelessWidget {
         children: [
           Text(
             resultPhrase,
-            style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           ElevatedButton(
             onPressed: resetHandler,
-            child: Text(
+            child: const Text(
               'Restart Quiz!',
             ),
           )

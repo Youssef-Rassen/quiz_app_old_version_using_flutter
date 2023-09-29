@@ -6,8 +6,8 @@ class Quiz extends StatelessWidget {
   final List<Map<String, Object>> questions;
   final Function answerQuestion;
   final int questionIndex;
-  Quiz(
-      {required this.questions,
+  const Quiz(
+      {super.key, required this.questions,
       required this.answerQuestion,
       required this.questionIndex});
 // required here means that all these values are needed and we cannot omit one of them

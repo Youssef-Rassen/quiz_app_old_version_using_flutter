@@ -6,9 +6,11 @@ import './result.dart';
 // }
 
 void main() => runApp(
-    MyApp()); // shorthand function which have one and exactly one expression
+    const MyApp()); // shorthand function which have one and exactly one expression
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -60,11 +62,8 @@ class MyAppState extends State<MyApp> {
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
-    print(_questionIndex);
     if (_questionIndex < _questions.length) {
-      print('We have more questions!');
     } else {
-      print('No more questions!');
     }
   }
 
@@ -76,7 +75,7 @@ class MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My Application'),
+          title: const Text('My Application'),
         ),
         body: _questionIndex < _questions.length
             ? Quiz(
